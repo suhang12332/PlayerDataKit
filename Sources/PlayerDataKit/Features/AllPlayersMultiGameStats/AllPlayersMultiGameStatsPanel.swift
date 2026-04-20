@@ -36,6 +36,14 @@ public final class AllPlayersMultiGameStatsController: ObservableObject {
     }
 
     public func configureAndLoad(entries: [(label: String, savesRoot: URL)]) async {
+        await configureAndLoad(entries: entries, currentPlayers: nil)
+    }
+
+    /// 加载全部玩家报表后，按当前玩家列表进行一次过滤。
+    public func configureAndLoad(
+        entries: [(label: String, savesRoot: URL)],
+        currentPlayers: Set<UUID>?
+    ) async {
         self.entries = entries
         do {
             guard entries.isEmpty == false else {
@@ -45,7 +53,10 @@ public final class AllPlayersMultiGameStatsController: ObservableObject {
                 return
             }
             let result = try await MultiGamePlayerReportLoader.loadAllPlayersReports(entries: entries)
-            reports = result
+            reports = MultiGamePlayerReportFiltering.filterByCurrentPlayers(
+                result,
+                allowedPlayers: currentPlayers
+            )
             errorText = nil
             resetPickers()
         } catch {

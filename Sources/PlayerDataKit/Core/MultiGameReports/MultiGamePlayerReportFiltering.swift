@@ -60,6 +60,17 @@ enum MultiGamePlayerReportFiltering {
             .sorted { displayName($0) < displayName($1) }
     }
 
+    /// 按当前玩家列表过滤报表；`allowedPlayers == nil` 或空集合时不过滤。
+    static func filterByCurrentPlayers(
+        _ input: [MultiGamePlayerReport],
+        allowedPlayers: Set<UUID>?
+    ) -> [MultiGamePlayerReport] {
+        guard let allowedPlayers, allowedPlayers.isEmpty == false else {
+            return input
+        }
+        return input.filter { allowedPlayers.contains($0.playerUUID) }
+    }
+
     /// 按所选玩家与存档筛选报表；`player == nil` 表示全部玩家，`save == nil` 表示全部存档。
     static func filter(_ input: [MultiGamePlayerReport], player: UUID?, save: String?) -> [MultiGamePlayerReport] {
         if player == nil, save == nil {
