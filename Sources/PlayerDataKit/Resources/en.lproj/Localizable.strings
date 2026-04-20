@@ -1,0 +1,65 @@
+"allPlayers.stats.error.emptyEntries" = "No game save directories found for statistics.";
+"allPlayers.stats.error.loadFailurePrefix" = "Statistics failed: ";
+"allPlayers.stats.header.title" = "Player Statistics";
+"allPlayers.stats.picker.allPlayers" = "All Players";
+"allPlayers.stats.picker.player.help" = "Choose player scope";
+"allPlayers.stats.picker.allSaves" = "All Saves";
+"allPlayers.stats.picker.save.help" = "Choose save scope";
+
+"allPlayers.report.totalPlayTimePerGame.title" = "Total Play Time by Game Instance (All Players)";
+"allPlayers.report.share.title" = "Player and Save Share (by Total Play Time)";
+"allPlayers.report.share.subtitle" = "Left: player time share; right: save usage share (heat).";
+"allPlayers.report.share.player" = "Player Time Share";
+"allPlayers.report.share.save" = "Save Usage Share";
+"allPlayers.report.matrix.title" = "Player x Save";
+"allPlayers.report.perSavePerPlayer.title" = "Total Play Time by Save (Per Player)";
+"allPlayers.report.perSavePerPlayer.subtitle" = "Players are stacked within each save.";
+"allPlayers.report.playerLeaderboard.title" = "Player Play Time Leaderboard";
+"allPlayers.report.playerLeaderboard.subtitle" = "Aggregated across all saves, sorted by total play time.";
+"allPlayers.report.saveLeaderboard.title" = "Save Leaderboard (by Heat)";
+"allPlayers.report.saveLeaderboard.subtitle" = "Heat = cumulative play time from all players in this save.";
+
+"allPlayers.overview.title" = "Global Overview";
+"allPlayers.overview.subtitle" = "Core metrics across all players and saves";
+"allPlayers.overview.combatProgress" = "Combat & Progress";
+"allPlayers.overview.progressRate" = "Progress Completion";
+"allPlayers.overview.mobKillShare" = "Mob Kill Share";
+"allPlayers.overview.playerKillShare" = "Player Kill Share";
+"allPlayers.overview.movement" = "Travel Distance";
+"allPlayers.overview.walkShare" = "Walk Share";
+"allPlayers.overview.sprintShare" = "Sprint Share";
+"allPlayers.overview.swimShare" = "Swim Share";
+"allPlayers.overview.otherMovement" = "Other Movement";
+"allPlayers.overview.crouchShare" = "Crouch Share";
+"allPlayers.overview.climbShare" = "Climb Share";
+"allPlayers.overview.aviateShare" = "Elytra Share";
+"allPlayers.overview.metric.gameInstances" = "Game Instances";
+"allPlayers.overview.metric.worldRecords" = "World Records";
+"allPlayers.overview.metric.totalPlayTime" = "Total Play Time";
+
+"allPlayers.axis.hours" = "Hours";
+"allPlayers.axis.game" = "Game";
+"allPlayers.axis.player" = "Player";
+"allPlayers.axis.save" = "Save";
+"allPlayers.legend.player" = "Player";
+"allPlayers.legend.save" = "Save";
+"allPlayers.table.player" = "Player";
+"allPlayers.table.save" = "Save";
+"allPlayers.table.duration" = "Duration";
+"allPlayers.placeholder.empty" = "-";
+
+"allPlayers.format.hours.compact" = "%.1f h";
+"allPlayers.format.hours.precise" = "%.2f h";
+"allPlayers.format.duration.seconds" = "%.0f s";
+"allPlayers.format.duration.minutes" = "%.1f min";
+"allPlayers.format.duration.hours" = "%.1f h";
+"allPlayers.format.duration.days" = "%.1f d";
+
+"error.nbt.emptyData" = "NBT data is empty";
+"error.nbt.invalidRoot" = "NBT root tag is not Compound";
+"error.nbt.insufficientData" = "NBT data is insufficient";
+"error.nbt.stringOutOfRange" = "NBT string out of range";
+"error.nbt.byteArrayOutOfRange" = "NBT byte array out of range";
+"error.nbt.unexpectedEndTag" = "Unexpected End tag in NBT";
+"error.nbt.gzipEmpty" = "GZIP compressed data is empty";
+"error.nbt.decompressionFailed" = "GZIP decompression failed";

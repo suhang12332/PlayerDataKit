@@ -1,0 +1,65 @@
+"allPlayers.stats.error.emptyEntries" = "未找到可統計的遊戲存檔目錄。";
+"allPlayers.stats.error.loadFailurePrefix" = "統計失敗：";
+"allPlayers.stats.header.title" = "玩家統計";
+"allPlayers.stats.picker.allPlayers" = "全部玩家";
+"allPlayers.stats.picker.player.help" = "選擇統計玩家範圍";
+"allPlayers.stats.picker.allSaves" = "全部存檔";
+"allPlayers.stats.picker.save.help" = "選擇統計存檔範圍";
+
+"allPlayers.report.totalPlayTimePerGame.title" = "各遊戲實例累計遊玩時間（全玩家）";
+"allPlayers.report.share.title" = "玩家和存檔占比（按總時長）";
+"allPlayers.report.share.subtitle" = "左：玩家時長占比；右：存檔使用占比（熱度）。";
+"allPlayers.report.share.player" = "玩家時長占比";
+"allPlayers.report.share.save" = "存檔使用占比";
+"allPlayers.report.matrix.title" = "玩家 × 存檔";
+"allPlayers.report.perSavePerPlayer.title" = "各遊戲存檔累計遊玩時間（按玩家）";
+"allPlayers.report.perSavePerPlayer.subtitle" = "同一存檔內不同玩家分段堆疊。";
+"allPlayers.report.playerLeaderboard.title" = "玩家累計遊玩時長排行榜";
+"allPlayers.report.playerLeaderboard.subtitle" = "匯總所有存檔；按總時長降序。";
+"allPlayers.report.saveLeaderboard.title" = "存檔排行榜（按熱度）";
+"allPlayers.report.saveLeaderboard.subtitle" = "熱度 = 所有玩家在該存檔的累計遊玩時長。";
+
+"allPlayers.overview.title" = "全域總覽";
+"allPlayers.overview.subtitle" = "跨全部玩家與存檔的核心指標";
+"allPlayers.overview.combatProgress" = "戰鬥與進度";
+"allPlayers.overview.progressRate" = "進度完成率";
+"allPlayers.overview.mobKillShare" = "生物擊殺占比";
+"allPlayers.overview.playerKillShare" = "玩家擊殺占比";
+"allPlayers.overview.movement" = "移動距離";
+"allPlayers.overview.walkShare" = "步行占比";
+"allPlayers.overview.sprintShare" = "疾跑占比";
+"allPlayers.overview.swimShare" = "游泳占比";
+"allPlayers.overview.otherMovement" = "其他位移";
+"allPlayers.overview.crouchShare" = "潛行占比";
+"allPlayers.overview.climbShare" = "攀爬占比";
+"allPlayers.overview.aviateShare" = "鞘翅占比";
+"allPlayers.overview.metric.gameInstances" = "遊戲實例";
+"allPlayers.overview.metric.worldRecords" = "世界記錄";
+"allPlayers.overview.metric.totalPlayTime" = "累計遊玩";
+
+"allPlayers.axis.hours" = "小時";
+"allPlayers.axis.game" = "遊戲";
+"allPlayers.axis.player" = "玩家";
+"allPlayers.axis.save" = "存檔";
+"allPlayers.legend.player" = "玩家";
+"allPlayers.legend.save" = "存檔";
+"allPlayers.table.player" = "玩家";
+"allPlayers.table.save" = "存檔";
+"allPlayers.table.duration" = "時長";
+"allPlayers.placeholder.empty" = "—";
+
+"allPlayers.format.hours.compact" = "%.1f h";
+"allPlayers.format.hours.precise" = "%.2f h";
+"allPlayers.format.duration.seconds" = "%.0f 秒";
+"allPlayers.format.duration.minutes" = "%.1f 分鐘";
+"allPlayers.format.duration.hours" = "%.1f 小時";
+"allPlayers.format.duration.days" = "%.1f 天";
+
+"error.nbt.emptyData" = "NBT 資料為空";
+"error.nbt.invalidRoot" = "NBT 根標籤不是 Compound";
+"error.nbt.insufficientData" = "NBT 資料不足";
+"error.nbt.stringOutOfRange" = "NBT 字串越界";
+"error.nbt.byteArrayOutOfRange" = "NBT 位元組陣列越界";
+"error.nbt.unexpectedEndTag" = "NBT 遇到意外的 End 標籤";
+"error.nbt.gzipEmpty" = "GZIP 壓縮資料為空";
+"error.nbt.decompressionFailed" = "GZIP 解壓失敗";

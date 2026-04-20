@@ -1,0 +1,65 @@
+"allPlayers.stats.error.emptyEntries" = "No se encontraron directorios de guardado para estadísticas.";
+"allPlayers.stats.error.loadFailurePrefix" = "Error de estadísticas: ";
+"allPlayers.stats.header.title" = "Estadísticas de jugadores";
+"allPlayers.stats.picker.allPlayers" = "Todos los jugadores";
+"allPlayers.stats.picker.player.help" = "Elegir alcance de jugadores";
+"allPlayers.stats.picker.allSaves" = "Todos los guardados";
+"allPlayers.stats.picker.save.help" = "Elegir alcance de guardados";
+
+"allPlayers.report.totalPlayTimePerGame.title" = "Tiempo total de juego por instancia (todos los jugadores)";
+"allPlayers.report.share.title" = "Proporción de jugadores y guardados (por tiempo total)";
+"allPlayers.report.share.subtitle" = "Izquierda: proporción de tiempo de jugadores; derecha: uso de guardados (heat).";
+"allPlayers.report.share.player" = "Proporción de tiempo de jugadores";
+"allPlayers.report.share.save" = "Proporción de uso de guardados";
+"allPlayers.report.matrix.title" = "Jugador x Guardado";
+"allPlayers.report.perSavePerPlayer.title" = "Tiempo total por guardado (por jugador)";
+"allPlayers.report.perSavePerPlayer.subtitle" = "Los jugadores se apilan dentro de cada guardado.";
+"allPlayers.report.playerLeaderboard.title" = "Clasificación por tiempo de juego";
+"allPlayers.report.playerLeaderboard.subtitle" = "Agregado en todos los guardados, ordenado por tiempo total.";
+"allPlayers.report.saveLeaderboard.title" = "Clasificación de guardados (por heat)";
+"allPlayers.report.saveLeaderboard.subtitle" = "Heat = tiempo acumulado de todos los jugadores en este guardado.";
+
+"allPlayers.overview.title" = "Resumen global";
+"allPlayers.overview.subtitle" = "Métricas clave en todos los jugadores y guardados";
+"allPlayers.overview.combatProgress" = "Combate y progreso";
+"allPlayers.overview.progressRate" = "Tasa de progreso";
+"allPlayers.overview.mobKillShare" = "Proporción de bajas de mobs";
+"allPlayers.overview.playerKillShare" = "Proporción de bajas de jugadores";
+"allPlayers.overview.movement" = "Distancia recorrida";
+"allPlayers.overview.walkShare" = "Proporción caminando";
+"allPlayers.overview.sprintShare" = "Proporción corriendo";
+"allPlayers.overview.swimShare" = "Proporción nadando";
+"allPlayers.overview.otherMovement" = "Otro movimiento";
+"allPlayers.overview.crouchShare" = "Proporción agachado";
+"allPlayers.overview.climbShare" = "Proporción escalando";
+"allPlayers.overview.aviateShare" = "Proporción de élitros";
+"allPlayers.overview.metric.gameInstances" = "Instancias de juego";
+"allPlayers.overview.metric.worldRecords" = "Registros de mundos";
+"allPlayers.overview.metric.totalPlayTime" = "Tiempo total de juego";
+
+"allPlayers.axis.hours" = "Horas";
+"allPlayers.axis.game" = "Juego";
+"allPlayers.axis.player" = "Jugador";
+"allPlayers.axis.save" = "Guardado";
+"allPlayers.legend.player" = "Jugador";
+"allPlayers.legend.save" = "Guardado";
+"allPlayers.table.player" = "Jugador";
+"allPlayers.table.save" = "Guardado";
+"allPlayers.table.duration" = "Duración";
+"allPlayers.placeholder.empty" = "-";
+
+"allPlayers.format.hours.compact" = "%.1f h";
+"allPlayers.format.hours.precise" = "%.2f h";
+"allPlayers.format.duration.seconds" = "%.0f s";
+"allPlayers.format.duration.minutes" = "%.1f min";
+"allPlayers.format.duration.hours" = "%.1f h";
+"allPlayers.format.duration.days" = "%.1f d";
+
+"error.nbt.emptyData" = "Los datos NBT están vacíos";
+"error.nbt.invalidRoot" = "La etiqueta raíz de NBT no es Compound";
+"error.nbt.insufficientData" = "Los datos NBT son insuficientes";
+"error.nbt.stringOutOfRange" = "Cadena NBT fuera de rango";
+"error.nbt.byteArrayOutOfRange" = "Arreglo de bytes NBT fuera de rango";
+"error.nbt.unexpectedEndTag" = "Etiqueta End inesperada en NBT";
+"error.nbt.gzipEmpty" = "Los datos comprimidos GZIP están vacíos";
+"error.nbt.decompressionFailed" = "Falló la descompresión GZIP";

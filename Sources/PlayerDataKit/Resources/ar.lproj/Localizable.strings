@@ -1,0 +1,65 @@
+"allPlayers.stats.error.emptyEntries" = "لم يتم العثور على مجلدات حفظ اللعبة للإحصاءات.";
+"allPlayers.stats.error.loadFailurePrefix" = "فشل الإحصاءات: ";
+"allPlayers.stats.header.title" = "إحصاءات اللاعبين";
+"allPlayers.stats.picker.allPlayers" = "كل اللاعبين";
+"allPlayers.stats.picker.player.help" = "اختر نطاق اللاعبين";
+"allPlayers.stats.picker.allSaves" = "كل ملفات الحفظ";
+"allPlayers.stats.picker.save.help" = "اختر نطاق الحفظ";
+
+"allPlayers.report.totalPlayTimePerGame.title" = "إجمالي وقت اللعب حسب مثيل اللعبة (كل اللاعبين)";
+"allPlayers.report.share.title" = "حصة اللاعبين وملفات الحفظ (حسب إجمالي وقت اللعب)";
+"allPlayers.report.share.subtitle" = "يسار: حصة وقت اللاعبين؛ يمين: حصة استخدام الحفظ (الحرارة).";
+"allPlayers.report.share.player" = "حصة وقت اللاعب";
+"allPlayers.report.share.save" = "حصة استخدام الحفظ";
+"allPlayers.report.matrix.title" = "لاعب × حفظ";
+"allPlayers.report.perSavePerPlayer.title" = "إجمالي وقت اللعب حسب الحفظ (لكل لاعب)";
+"allPlayers.report.perSavePerPlayer.subtitle" = "يتم تكديس اللاعبين داخل كل حفظ.";
+"allPlayers.report.playerLeaderboard.title" = "لوحة صدارة وقت لعب اللاعبين";
+"allPlayers.report.playerLeaderboard.subtitle" = "مجمّعة عبر كل ملفات الحفظ، مرتبة حسب إجمالي وقت اللعب.";
+"allPlayers.report.saveLeaderboard.title" = "لوحة صدارة الحفظ (حسب الحرارة)";
+"allPlayers.report.saveLeaderboard.subtitle" = "الحرارة = وقت اللعب التراكمي من جميع اللاعبين في هذا الحفظ.";
+
+"allPlayers.overview.title" = "نظرة عامة شاملة";
+"allPlayers.overview.subtitle" = "المقاييس الأساسية عبر جميع اللاعبين وملفات الحفظ";
+"allPlayers.overview.combatProgress" = "القتال والتقدّم";
+"allPlayers.overview.progressRate" = "معدل إكمال التقدّم";
+"allPlayers.overview.mobKillShare" = "حصة قتل المخلوقات";
+"allPlayers.overview.playerKillShare" = "حصة قتل اللاعبين";
+"allPlayers.overview.movement" = "مسافة الحركة";
+"allPlayers.overview.walkShare" = "حصة المشي";
+"allPlayers.overview.sprintShare" = "حصة الجري السريع";
+"allPlayers.overview.swimShare" = "حصة السباحة";
+"allPlayers.overview.otherMovement" = "حركة أخرى";
+"allPlayers.overview.crouchShare" = "حصة الانحناء";
+"allPlayers.overview.climbShare" = "حصة التسلق";
+"allPlayers.overview.aviateShare" = "حصة الإليترا";
+"allPlayers.overview.metric.gameInstances" = "مثيلات اللعبة";
+"allPlayers.overview.metric.worldRecords" = "سجلات العوالم";
+"allPlayers.overview.metric.totalPlayTime" = "إجمالي وقت اللعب";
+
+"allPlayers.axis.hours" = "ساعات";
+"allPlayers.axis.game" = "لعبة";
+"allPlayers.axis.player" = "لاعب";
+"allPlayers.axis.save" = "حفظ";
+"allPlayers.legend.player" = "لاعب";
+"allPlayers.legend.save" = "حفظ";
+"allPlayers.table.player" = "لاعب";
+"allPlayers.table.save" = "حفظ";
+"allPlayers.table.duration" = "المدة";
+"allPlayers.placeholder.empty" = "-";
+
+"allPlayers.format.hours.compact" = "%.1f h";
+"allPlayers.format.hours.precise" = "%.2f h";
+"allPlayers.format.duration.seconds" = "%.0f ث";
+"allPlayers.format.duration.minutes" = "%.1f دقيقة";
+"allPlayers.format.duration.hours" = "%.1f ساعة";
+"allPlayers.format.duration.days" = "%.1f يوم";
+
+"error.nbt.emptyData" = "بيانات NBT فارغة";
+"error.nbt.invalidRoot" = "علامة الجذر في NBT ليست Compound";
+"error.nbt.insufficientData" = "بيانات NBT غير كافية";
+"error.nbt.stringOutOfRange" = "سلسلة NBT خارج النطاق";
+"error.nbt.byteArrayOutOfRange" = "مصفوفة بايت NBT خارج النطاق";
+"error.nbt.unexpectedEndTag" = "علامة End غير متوقعة في NBT";
+"error.nbt.gzipEmpty" = "بيانات GZIP المضغوطة فارغة";
+"error.nbt.decompressionFailed" = "فشل فك ضغط GZIP";

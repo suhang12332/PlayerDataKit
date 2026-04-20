@@ -1,0 +1,65 @@
+"allPlayers.stats.error.emptyEntries" = "Aucun dossier de sauvegarde trouvé pour les statistiques.";
+"allPlayers.stats.error.loadFailurePrefix" = "Échec des statistiques : ";
+"allPlayers.stats.header.title" = "Statistiques des joueurs";
+"allPlayers.stats.picker.allPlayers" = "Tous les joueurs";
+"allPlayers.stats.picker.player.help" = "Choisir la portée des joueurs";
+"allPlayers.stats.picker.allSaves" = "Toutes les sauvegardes";
+"allPlayers.stats.picker.save.help" = "Choisir la portée des sauvegardes";
+
+"allPlayers.report.totalPlayTimePerGame.title" = "Temps de jeu total par instance (tous les joueurs)";
+"allPlayers.report.share.title" = "Part joueurs et sauvegardes (par temps total)";
+"allPlayers.report.share.subtitle" = "Gauche : part du temps des joueurs ; droite : usage des sauvegardes (heat).";
+"allPlayers.report.share.player" = "Part du temps des joueurs";
+"allPlayers.report.share.save" = "Part d’usage des sauvegardes";
+"allPlayers.report.matrix.title" = "Joueur x Sauvegarde";
+"allPlayers.report.perSavePerPlayer.title" = "Temps total par sauvegarde (par joueur)";
+"allPlayers.report.perSavePerPlayer.subtitle" = "Les joueurs sont empilés dans chaque sauvegarde.";
+"allPlayers.report.playerLeaderboard.title" = "Classement du temps de jeu des joueurs";
+"allPlayers.report.playerLeaderboard.subtitle" = "Agrégé sur toutes les sauvegardes, trié par temps total.";
+"allPlayers.report.saveLeaderboard.title" = "Classement des sauvegardes (par heat)";
+"allPlayers.report.saveLeaderboard.subtitle" = "Heat = temps cumulé de tous les joueurs dans cette sauvegarde.";
+
+"allPlayers.overview.title" = "Vue d’ensemble globale";
+"allPlayers.overview.subtitle" = "Indicateurs clés sur tous les joueurs et sauvegardes";
+"allPlayers.overview.combatProgress" = "Combat et progression";
+"allPlayers.overview.progressRate" = "Taux de progression";
+"allPlayers.overview.mobKillShare" = "Part des mobs tués";
+"allPlayers.overview.playerKillShare" = "Part des joueurs tués";
+"allPlayers.overview.movement" = "Distance parcourue";
+"allPlayers.overview.walkShare" = "Part de marche";
+"allPlayers.overview.sprintShare" = "Part de sprint";
+"allPlayers.overview.swimShare" = "Part de nage";
+"allPlayers.overview.otherMovement" = "Autres déplacements";
+"allPlayers.overview.crouchShare" = "Part accroupie";
+"allPlayers.overview.climbShare" = "Part d’escalade";
+"allPlayers.overview.aviateShare" = "Part d’élytre";
+"allPlayers.overview.metric.gameInstances" = "Instances de jeu";
+"allPlayers.overview.metric.worldRecords" = "Enregistrements de mondes";
+"allPlayers.overview.metric.totalPlayTime" = "Temps de jeu total";
+
+"allPlayers.axis.hours" = "Heures";
+"allPlayers.axis.game" = "Jeu";
+"allPlayers.axis.player" = "Joueur";
+"allPlayers.axis.save" = "Sauvegarde";
+"allPlayers.legend.player" = "Joueur";
+"allPlayers.legend.save" = "Sauvegarde";
+"allPlayers.table.player" = "Joueur";
+"allPlayers.table.save" = "Sauvegarde";
+"allPlayers.table.duration" = "Durée";
+"allPlayers.placeholder.empty" = "-";
+
+"allPlayers.format.hours.compact" = "%.1f h";
+"allPlayers.format.hours.precise" = "%.2f h";
+"allPlayers.format.duration.seconds" = "%.0f s";
+"allPlayers.format.duration.minutes" = "%.1f min";
+"allPlayers.format.duration.hours" = "%.1f h";
+"allPlayers.format.duration.days" = "%.1f j";
+
+"error.nbt.emptyData" = "Les données NBT sont vides";
+"error.nbt.invalidRoot" = "La balise racine NBT n’est pas Compound";
+"error.nbt.insufficientData" = "Les données NBT sont insuffisantes";
+"error.nbt.stringOutOfRange" = "Chaîne NBT hors limites";
+"error.nbt.byteArrayOutOfRange" = "Tableau d’octets NBT hors limites";
+"error.nbt.unexpectedEndTag" = "Balise End inattendue dans NBT";
+"error.nbt.gzipEmpty" = "Les données compressées GZIP sont vides";
+"error.nbt.decompressionFailed" = "Échec de la décompression GZIP";

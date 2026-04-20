@@ -1,0 +1,65 @@
+"allPlayers.stats.error.emptyEntries" = "Keine Spielstandverzeichnisse für Statistiken gefunden.";
+"allPlayers.stats.error.loadFailurePrefix" = "Statistik fehlgeschlagen: ";
+"allPlayers.stats.header.title" = "Spielerstatistiken";
+"allPlayers.stats.picker.allPlayers" = "Alle Spieler";
+"allPlayers.stats.picker.player.help" = "Spielerbereich wählen";
+"allPlayers.stats.picker.allSaves" = "Alle Spielstände";
+"allPlayers.stats.picker.save.help" = "Spielstandbereich wählen";
+
+"allPlayers.report.totalPlayTimePerGame.title" = "Gesamtspielzeit nach Spielinstanz (alle Spieler)";
+"allPlayers.report.share.title" = "Spieler- und Spielstandanteile (nach Gesamtspielzeit)";
+"allPlayers.report.share.subtitle" = "Links: Spielerzeitanteil; rechts: Spielstandnutzung (Heat).";
+"allPlayers.report.share.player" = "Spielerzeitanteil";
+"allPlayers.report.share.save" = "Spielstandnutzungsanteil";
+"allPlayers.report.matrix.title" = "Spieler x Spielstand";
+"allPlayers.report.perSavePerPlayer.title" = "Gesamtspielzeit nach Spielstand (pro Spieler)";
+"allPlayers.report.perSavePerPlayer.subtitle" = "Spieler werden innerhalb jedes Spielstands gestapelt.";
+"allPlayers.report.playerLeaderboard.title" = "Rangliste der Spieler-Spielzeit";
+"allPlayers.report.playerLeaderboard.subtitle" = "Über alle Spielstände aggregiert, nach Gesamtspielzeit sortiert.";
+"allPlayers.report.saveLeaderboard.title" = "Spielstand-Rangliste (nach Heat)";
+"allPlayers.report.saveLeaderboard.subtitle" = "Heat = kumulierte Spielzeit aller Spieler in diesem Spielstand.";
+
+"allPlayers.overview.title" = "Gesamtübersicht";
+"allPlayers.overview.subtitle" = "Kernmetriken über alle Spieler und Spielstände";
+"allPlayers.overview.combatProgress" = "Kampf & Fortschritt";
+"allPlayers.overview.progressRate" = "Fortschrittsrate";
+"allPlayers.overview.mobKillShare" = "Mob-Kill-Anteil";
+"allPlayers.overview.playerKillShare" = "Spieler-Kill-Anteil";
+"allPlayers.overview.movement" = "Bewegungsdistanz";
+"allPlayers.overview.walkShare" = "Geh-Anteil";
+"allPlayers.overview.sprintShare" = "Sprint-Anteil";
+"allPlayers.overview.swimShare" = "Schwimm-Anteil";
+"allPlayers.overview.otherMovement" = "Andere Bewegung";
+"allPlayers.overview.crouchShare" = "Schleich-Anteil";
+"allPlayers.overview.climbShare" = "Kletter-Anteil";
+"allPlayers.overview.aviateShare" = "Elytra-Anteil";
+"allPlayers.overview.metric.gameInstances" = "Spielinstanzen";
+"allPlayers.overview.metric.worldRecords" = "Welt-Einträge";
+"allPlayers.overview.metric.totalPlayTime" = "Gesamtspielzeit";
+
+"allPlayers.axis.hours" = "Stunden";
+"allPlayers.axis.game" = "Spiel";
+"allPlayers.axis.player" = "Spieler";
+"allPlayers.axis.save" = "Spielstand";
+"allPlayers.legend.player" = "Spieler";
+"allPlayers.legend.save" = "Spielstand";
+"allPlayers.table.player" = "Spieler";
+"allPlayers.table.save" = "Spielstand";
+"allPlayers.table.duration" = "Dauer";
+"allPlayers.placeholder.empty" = "-";
+
+"allPlayers.format.hours.compact" = "%.1f h";
+"allPlayers.format.hours.precise" = "%.2f h";
+"allPlayers.format.duration.seconds" = "%.0f Sek.";
+"allPlayers.format.duration.minutes" = "%.1f Min.";
+"allPlayers.format.duration.hours" = "%.1f Std.";
+"allPlayers.format.duration.days" = "%.1f T.";
+
+"error.nbt.emptyData" = "NBT-Daten sind leer";
+"error.nbt.invalidRoot" = "NBT-Root-Tag ist nicht Compound";
+"error.nbt.insufficientData" = "NBT-Daten sind unzureichend";
+"error.nbt.stringOutOfRange" = "NBT-String außerhalb des Bereichs";
+"error.nbt.byteArrayOutOfRange" = "NBT-Byte-Array außerhalb des Bereichs";
+"error.nbt.unexpectedEndTag" = "Unerwartetes End-Tag in NBT";
+"error.nbt.gzipEmpty" = "GZIP-komprimierte Daten sind leer";
+"error.nbt.decompressionFailed" = "GZIP-Dekomprimierung fehlgeschlagen";
