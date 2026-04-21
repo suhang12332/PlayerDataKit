@@ -179,6 +179,8 @@ public struct AllPlayersMultiGameStatsHeaderContent: View {
 }
 
 public struct AllPlayersMultiGameStatsReportSection: View {
+    private static let emptyStateMinHeight: CGFloat = 400
+
     @ObservedObject var controller: AllPlayersMultiGameStatsController
     let playerDisplayName: (String) -> String
     let playerAvatarView: (String) -> AnyView
@@ -201,14 +203,11 @@ public struct AllPlayersMultiGameStatsReportSection: View {
                     .controlSize(.small)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             case .emptyPlayers:
-                Text(controller.emptyPlayersMessage)
-                    .foregroundStyle(.secondary)
+                stateMessage(controller.emptyPlayersMessage, color: .secondary)
             case .emptySaves:
-                Text(controller.emptyEntriesMessage)
-                    .foregroundStyle(.secondary)
+                stateMessage(controller.emptyEntriesMessage, color: .secondary)
             case let .failed(message):
-                Text(message)
-                    .foregroundStyle(.red)
+                stateMessage(message, color: .red)
             case .loaded:
                 AllPlayersMultiGameReportView(
                     reports: controller.filteredReports(),
@@ -217,6 +216,12 @@ public struct AllPlayersMultiGameStatsReportSection: View {
                 )
             }
         }
+    }
+
+    private func stateMessage(_ message: String, color: Color) -> some View {
+        Text(message)
+            .foregroundStyle(color)
+            .frame(maxWidth: .infinity, minHeight: Self.emptyStateMinHeight, alignment: .center)
     }
 }
 
