@@ -1,6 +1,5 @@
 import Foundation
 
-/// 玩家 ID 字符串规范化工具。
 public enum MinecraftPlayerIdentity {
     public static func normalizedIdString(_ id: String) -> String {
         id.lowercased().filter { $0.isHexDigit }

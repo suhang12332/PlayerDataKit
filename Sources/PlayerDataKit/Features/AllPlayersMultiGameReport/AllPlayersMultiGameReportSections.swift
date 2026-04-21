@@ -119,7 +119,6 @@ extension AllPlayersMultiGameReportView {
                                 }
                                 .width(min: 90, ideal: 110)
                             }
-                            // 横向 ScrollView 内需显式宽度，避免 Table 宽度塌陷。
                             .frame(minWidth: max(proxy.size.width, 450), alignment: .leading)
                             .frame(minHeight: CGFloat(max(220, flatRows.count * 24)))
                         }
@@ -130,7 +129,6 @@ extension AllPlayersMultiGameReportView {
         }
     }
 
-    /// 每个存档一条横条，按玩家分段堆叠。
     func playTimeByGamePerPlayerChart(rows: [GamePlayerPlayRow]) -> some View {
         return Group {
             if rows.isEmpty == false {

@@ -1,10 +1,6 @@
 import Foundation
 
-/// 扫描 `saves` 并按玩家 ID 聚合数据。
 enum PlayerSaveScanner {
-    // MARK: - 公共 API
-
-    /// 枚举 `saves` 中出现的玩家 ID。
     static func discoverPlayerUUIDs(savesRoot: URL) -> [String] {
         var uuids = Set<String>()
         for world in worldDirectories(under: savesRoot) {
@@ -13,7 +9,6 @@ enum PlayerSaveScanner {
         return uuids.sorted()
     }
 
-    /// 构建单个 `saves` 根目录下的玩家报表。
     static func buildReport(savesRoot: URL, playerUUID: String) throws -> PlayerSaveReport {
         let normalizedStem = MinecraftPlayerIdentity.normalizedIdString(playerUUID)
         let dashedStem = MinecraftPlayerIdentity.dashedUUIDString(fromNormalized: normalizedStem) ?? normalizedStem
@@ -69,7 +64,6 @@ enum PlayerSaveScanner {
         return PlayerSaveReport(playerUUID: normalizedStem, worlds: records)
     }
 
-    /// 构建跨多个游戏目录的全部玩家报表。
     static func buildAllPlayersMultiGameReports(
         entries: [(label: String, savesRoot: URL)]
     ) throws -> [MultiGamePlayerReport] {
@@ -96,8 +90,6 @@ enum PlayerSaveScanner {
 
         return reports
     }
-
-    // MARK: - 内部
 
     private static func worldDirectories(under savesRoot: URL) -> [URL] {
         let fm = FileManager.default

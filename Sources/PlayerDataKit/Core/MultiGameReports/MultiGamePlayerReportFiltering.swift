@@ -1,11 +1,9 @@
 import Foundation
 
-/// Picker 通用 token。
 enum MultiGameReportPickerToken {
     static let all = "__ALL__"
 }
 
-/// 存档筛选项。
 struct SavePickerOption: Identifiable, Hashable, Sendable {
     let key: String
     let label: String
@@ -18,12 +16,10 @@ struct SavePickerOption: Identifiable, Hashable, Sendable {
 }
 
 enum MultiGamePlayerReportFiltering {
-    /// 生成存档唯一 key。
     static func saveKey(gameLabel: String, worldDirectoryName: String) -> String {
         "\(gameLabel)|\(worldDirectoryName)"
     }
 
-    /// 生成存档展示名。
     static func saveDisplayLabel(gameLabel: String, world: WorldPlayerRecord) -> String {
         if world.chartLabel == world.worldDirectoryName {
             "\(gameLabel) · \(world.chartLabel)"
@@ -32,7 +28,6 @@ enum MultiGamePlayerReportFiltering {
         }
     }
 
-    /// 汇总并排序存档选项。
     static func makeSavePickerOptions(from reports: [MultiGamePlayerReport]) -> [SavePickerOption] {
         var dict: [String: String] = [:]
         for report in reports {
@@ -54,13 +49,11 @@ enum MultiGamePlayerReportFiltering {
         return options
     }
 
-    /// 按展示名排序玩家 ID。
     static func sortedPlayerUUIDs(from reports: [MultiGamePlayerReport], displayName: (String) -> String) -> [String] {
         reports.map(\.playerUUID)
             .sorted { displayName($0) < displayName($1) }
     }
 
-    /// 按当前玩家集合过滤；`nil` 不过滤，空集返回空。
     static func filterByCurrentPlayerIDs(
         _ input: [MultiGamePlayerReport],
         allowedPlayerIDs: Set<String>?
@@ -79,7 +72,6 @@ enum MultiGamePlayerReportFiltering {
         }
     }
 
-    /// 按玩家与存档筛选；`nil` 表示全部。
     static func filter(_ input: [MultiGamePlayerReport], player: String?, save: String?) -> [MultiGamePlayerReport] {
         let normalizedPlayer = player.map(MinecraftPlayerIdentity.normalizedIdString)
         if player == nil, save == nil {

@@ -1,12 +1,9 @@
 import Foundation
 
-/// 单个世界中的玩家数据。
 struct WorldPlayerRecord: Sendable, Identifiable {
-    /// 以世界目录名为稳定标识。
     var id: String { worldDirectoryName }
 
     let worldDirectoryName: String
-    /// 来自 `level.dat` 的 LevelName。
     let displayName: String?
     let stats: MinecraftStatsSnapshot?
     let advancements: MinecraftAdvancementsSnapshot?
@@ -23,14 +20,12 @@ struct WorldPlayerRecord: Sendable, Identifiable {
         self.advancements = advancements
     }
 
-    /// 图表展示名。
     var chartLabel: String {
         if let displayName, !displayName.isEmpty { return displayName }
         return worldDirectoryName
     }
 }
 
-/// 单个游戏实例下的玩家汇总。
 struct PlayerSaveReport: Sendable {
     let playerUUID: String
     let worlds: [WorldPlayerRecord]
@@ -40,7 +35,6 @@ struct PlayerSaveReport: Sendable {
         self.worlds = worlds
     }
 
-    /// 各世界 `play_time` tick 总和。
     var totalPlayTimeTicks: Int64 {
         worlds.reduce(0) { partial, w in
             partial + (w.stats?.playTimeTicks ?? 0)
@@ -48,7 +42,6 @@ struct PlayerSaveReport: Sendable {
     }
 }
 
-/// 同一玩家在多个游戏实例下的对比报表。
 struct MultiGamePlayerReport: Sendable {
     struct Entry: Sendable, Identifiable {
         var id: String { savesRoot.path }

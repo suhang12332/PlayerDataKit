@@ -1,9 +1,6 @@
 import Charts
 import SwiftUI
 
-/// 展示「全部玩家 × 全部游戏实例」汇总统计。
-///
-/// `reports` 传入 `PlayerSaveScanner.buildAllPlayersMultiGameReports(entries:)` 的结果。
 struct AllPlayersMultiGameReportView: View {
     private struct DashboardData {
         let playerRows: [PlayerPlayTimeRow]

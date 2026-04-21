@@ -1,7 +1,5 @@
 import Foundation
 
-// MARK: - 格式化
-
 enum Formatting {
     static func hours(fromTicks ticks: Int64?) -> Double {
         guard let t = ticks, t > 0 else { return 0 }
@@ -38,7 +36,6 @@ struct GamePlayerPlayRow: Identifiable {
     let gameLabel: String
     let playerUUID: String
     let playHours: Double
-    /// 图例与堆叠系列标签（已处理重名）。
     let playerLabel: String
     var id: String { "\(gameLabel)|\(playerUUID)" }
 }

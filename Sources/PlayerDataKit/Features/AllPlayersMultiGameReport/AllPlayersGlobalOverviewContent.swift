@@ -1,7 +1,5 @@
 import SwiftUI
 
-// MARK: - 全部玩家 x 全部存档（全局总览）
-
 private struct AllPlayersGlobalMetrics: Sendable {
     let gameInstanceCount: Int
     let worldCount: Int
@@ -46,7 +44,6 @@ private struct AllPlayersGlobalMetrics: Sendable {
     }
 }
 
-/// 跨所有玩家、所有 `saves` 根目录、所有世界的汇总指标（主界面推荐用这一层）。
 struct AllPlayersGlobalOverviewContent: View {
     let reports: [MultiGamePlayerReport]
 

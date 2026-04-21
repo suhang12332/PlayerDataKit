@@ -1,6 +1,5 @@
 import Foundation
 
-/// `stats/<uuid>.json` 中的 `minecraft:custom` 等统计。
 struct MinecraftStatsSnapshot: Sendable {
     let playTimeTicks: Int64?
     let deaths: Int64?

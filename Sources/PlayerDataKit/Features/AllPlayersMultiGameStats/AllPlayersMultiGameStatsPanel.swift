@@ -1,7 +1,6 @@
 import Combine
 import SwiftUI
 
-/// 「全部玩家 × 全部游戏」统计状态与加载逻辑。
 @MainActor
 public final class AllPlayersMultiGameStatsController: ObservableObject {
     public enum ContentState: Equatable {
@@ -50,7 +49,6 @@ public final class AllPlayersMultiGameStatsController: ObservableObject {
         await configureAndLoad(entries: entries, currentPlayerIDs: nil)
     }
 
-    /// 加载报表并按当前玩家 ID 过滤。
     public func configureAndLoad(
         entries: [(label: String, savesRoot: URL)],
         currentPlayerIDs: Set<String>?
@@ -83,7 +81,6 @@ public final class AllPlayersMultiGameStatsController: ObservableObject {
         }
     }
 
-    /// 弹窗关闭时清理状态。
     public func clearForDismiss() {
         reports = []
         contentState = .loading
@@ -97,7 +94,6 @@ public final class AllPlayersMultiGameStatsController: ObservableObject {
         return MultiGamePlayerReportFiltering.filter(reports, player: player, save: save)
     }
 
-    /// 按展示名排序玩家 ID。
     func sortedPlayerUUIDs(displayName: (String) -> String) -> [String] {
         MultiGamePlayerReportFiltering.sortedPlayerUUIDs(from: reports, displayName: displayName)
     }
@@ -115,8 +111,6 @@ public final class AllPlayersMultiGameStatsController: ObservableObject {
         selectedSave = nil
     }
 }
-
-// MARK: - Header
 
 public struct AllPlayersMultiGameStatsHeaderContent: View {
     @ObservedObject var controller: AllPlayersMultiGameStatsController
@@ -186,8 +180,6 @@ public struct AllPlayersMultiGameStatsHeaderContent: View {
         }
     }
 }
-
-// MARK: - Body
 
 public struct AllPlayersMultiGameStatsReportSection: View {
     @ObservedObject var controller: AllPlayersMultiGameStatsController
