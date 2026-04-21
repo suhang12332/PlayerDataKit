@@ -1,4 +1,5 @@
 "allPlayers.stats.error.emptyEntries" = "Keine Spielstandverzeichnisse für Statistiken gefunden.";
+"allPlayers.stats.error.emptyPlayers" = "Keine Spieler für Statistiken verfügbar.";
 "allPlayers.stats.error.loadFailurePrefix" = "Statistik fehlgeschlagen: ";
 "allPlayers.stats.header.title" = "Spielerstatistiken";
 "allPlayers.stats.picker.allPlayers" = "Alle Spieler";

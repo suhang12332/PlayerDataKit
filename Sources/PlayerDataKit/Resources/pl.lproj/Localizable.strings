@@ -1,4 +1,5 @@
 "allPlayers.stats.error.emptyEntries" = "Nie znaleziono katalogów zapisów gry do statystyk.";
+"allPlayers.stats.error.emptyPlayers" = "Brak graczy dostępnych do statystyk.";
 "allPlayers.stats.error.loadFailurePrefix" = "Statystyki nie powiodły się: ";
 "allPlayers.stats.header.title" = "Statystyki graczy";
 "allPlayers.stats.picker.allPlayers" = "Wszyscy gracze";

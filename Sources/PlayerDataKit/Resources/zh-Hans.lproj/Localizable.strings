@@ -1,4 +1,5 @@
 "allPlayers.stats.error.emptyEntries" = "未找到可统计的游戏存档目录。";
+"allPlayers.stats.error.emptyPlayers" = "没有可用于统计的玩家。";
 "allPlayers.stats.error.loadFailurePrefix" = "统计失败：";
 "allPlayers.stats.header.title" = "玩家统计";
 "allPlayers.stats.picker.allPlayers" = "全部玩家";

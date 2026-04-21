@@ -1,4 +1,5 @@
 "allPlayers.stats.error.emptyEntries" = "Nenhum diretório de saves encontrado para estatísticas.";
+"allPlayers.stats.error.emptyPlayers" = "Nenhum jogador disponível para estatísticas.";
 "allPlayers.stats.error.loadFailurePrefix" = "Falha nas estatísticas: ";
 "allPlayers.stats.header.title" = "Estatísticas de jogadores";
 "allPlayers.stats.picker.allPlayers" = "Todos os jogadores";

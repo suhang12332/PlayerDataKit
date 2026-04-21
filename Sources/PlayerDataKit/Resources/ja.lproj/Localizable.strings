@@ -1,4 +1,5 @@
 "allPlayers.stats.error.emptyEntries" = "統計対象のゲームセーブディレクトリが見つかりません。";
+"allPlayers.stats.error.emptyPlayers" = "統計に利用できるプレイヤーがいません。";
 "allPlayers.stats.error.loadFailurePrefix" = "統計に失敗しました: ";
 "allPlayers.stats.header.title" = "プレイヤー統計";
 "allPlayers.stats.picker.allPlayers" = "すべてのプレイヤー";

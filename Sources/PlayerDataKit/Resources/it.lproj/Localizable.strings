@@ -1,4 +1,5 @@
 "allPlayers.stats.error.emptyEntries" = "Nessuna cartella di salvataggio trovata per le statistiche.";
+"allPlayers.stats.error.emptyPlayers" = "Nessun giocatore disponibile per le statistiche.";
 "allPlayers.stats.error.loadFailurePrefix" = "Statistiche non riuscite: ";
 "allPlayers.stats.header.title" = "Statistiche giocatori";
 "allPlayers.stats.picker.allPlayers" = "Tutti i giocatori";

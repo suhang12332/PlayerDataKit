@@ -1,4 +1,5 @@
 "allPlayers.stats.error.emptyEntries" = "ไม่พบโฟลเดอร์เซฟเกมสำหรับสถิติ";
+"allPlayers.stats.error.emptyPlayers" = "ไม่มีผู้เล่นที่พร้อมใช้งานสำหรับสถิติ";
 "allPlayers.stats.error.loadFailurePrefix" = "สถิติล้มเหลว: ";
 "allPlayers.stats.header.title" = "สถิติผู้เล่น";
 "allPlayers.stats.picker.allPlayers" = "ผู้เล่นทั้งหมด";

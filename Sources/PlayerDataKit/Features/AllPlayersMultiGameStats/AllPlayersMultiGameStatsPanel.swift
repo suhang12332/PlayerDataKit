@@ -35,7 +35,9 @@ public final class AllPlayersMultiGameStatsController: ObservableObject {
         self.emptyEntriesMessage = emptyEntriesMessage ?? PDKL10n.string(
             "allPlayers.stats.error.emptyEntries"
         )
-        self.emptyPlayersMessage = emptyPlayersMessage ?? "No players available for statistics."
+        self.emptyPlayersMessage = emptyPlayersMessage ?? PDKL10n.string(
+            "allPlayers.stats.error.emptyPlayers"
+        )
         self.loadFailurePrefix = loadFailurePrefix ?? PDKL10n.string(
             "allPlayers.stats.error.loadFailurePrefix"
         )

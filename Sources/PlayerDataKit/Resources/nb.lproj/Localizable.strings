@@ -1,4 +1,5 @@
 "allPlayers.stats.error.emptyEntries" = "Fant ingen spill-lagringsmapper for statistikk.";
+"allPlayers.stats.error.emptyPlayers" = "Ingen spillere tilgjengelige for statistikk.";
 "allPlayers.stats.error.loadFailurePrefix" = "Statistikk feilet: ";
 "allPlayers.stats.header.title" = "Spillerstatistikk";
 "allPlayers.stats.picker.allPlayers" = "Alle spillere";
