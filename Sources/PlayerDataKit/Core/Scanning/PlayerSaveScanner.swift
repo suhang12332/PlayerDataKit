@@ -1,10 +1,10 @@
 import Foundation
 
-/// 扫描 Minecraft Java 版 `saves` 目录，按玩家 ID（无短杠字符串）聚合 `stats` / `advancements`。
+/// 扫描 `saves` 并按玩家 ID 聚合数据。
 enum PlayerSaveScanner {
     // MARK: - 公共 API
 
-    /// 枚举 `saves` 下所有世界中出现的玩家 ID（来自 `stats/*.json`）。
+    /// 枚举 `saves` 中出现的玩家 ID。
     static func discoverPlayerUUIDs(savesRoot: URL) -> [String] {
         var uuids = Set<String>()
         for world in worldDirectories(under: savesRoot) {
@@ -13,7 +13,7 @@ enum PlayerSaveScanner {
         return uuids.sorted()
     }
 
-    /// 构建指定玩家在「一个 saves 根目录」下的完整报表。
+    /// 构建单个 `saves` 根目录下的玩家报表。
     static func buildReport(savesRoot: URL, playerUUID: String) throws -> PlayerSaveReport {
         let normalizedStem = MinecraftPlayerIdentity.normalizedIdString(playerUUID)
         let dashedStem = MinecraftPlayerIdentity.dashedUUIDString(fromNormalized: normalizedStem) ?? normalizedStem
@@ -69,9 +69,7 @@ enum PlayerSaveScanner {
         return PlayerSaveReport(playerUUID: normalizedStem, worlds: records)
     }
 
-    /// 为多个游戏目录构建「所有玩家」的对比报表。
-    ///
-    /// - Returns: 所有在任一 `saves` 里出现过的玩家多实例报表（按无短杠 ID 升序）。
+    /// 构建跨多个游戏目录的全部玩家报表。
     static func buildAllPlayersMultiGameReports(
         entries: [(label: String, savesRoot: URL)]
     ) throws -> [MultiGamePlayerReport] {

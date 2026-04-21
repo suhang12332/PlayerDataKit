@@ -157,7 +157,7 @@ extension AllPlayersMultiGameReportView {
                     let ticks = world.stats?.playTimeTicks ?? 0
                     let hours = Formatting.hours(fromTicks: ticks)
                     guard hours > 0 else { continue }
-                    // 使用目录名做 key，避免同名世界（display name）被合并。
+                    // 用目录名做 key，避免同名世界被合并。
                     let saveKey = MultiGamePlayerReportFiltering.saveKey(
                         gameLabel: entry.gameLabel,
                         worldDirectoryName: world.worldDirectoryName

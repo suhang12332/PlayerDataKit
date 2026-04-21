@@ -1,11 +1,11 @@
 import Foundation
 
-/// Picker 使用 `String` 表示「全部」与具体玩家 ID / 存档 key。
+/// Picker 通用 token。
 enum MultiGameReportPickerToken {
     static let all = "__ALL__"
 }
 
-/// 存档筛选下拉项：key 为 ``saveKey(gameLabel:worldDirectoryName:)``。
+/// 存档筛选项。
 struct SavePickerOption: Identifiable, Hashable, Sendable {
     let key: String
     let label: String
@@ -18,12 +18,12 @@ struct SavePickerOption: Identifiable, Hashable, Sendable {
 }
 
 enum MultiGamePlayerReportFiltering {
-    /// 与 ``AllPlayersMultiGameReportView`` 内矩阵/热度统计中的存档 key 规则一致。
+    /// 生成存档唯一 key。
     static func saveKey(gameLabel: String, worldDirectoryName: String) -> String {
         "\(gameLabel)|\(worldDirectoryName)"
     }
 
-    /// 与矩阵、热度、Picker 共用的「游戏实例 · 世界」展示文案。
+    /// 生成存档展示名。
     static func saveDisplayLabel(gameLabel: String, world: WorldPlayerRecord) -> String {
         if world.chartLabel == world.worldDirectoryName {
             "\(gameLabel) · \(world.chartLabel)"
@@ -32,7 +32,7 @@ enum MultiGamePlayerReportFiltering {
         }
     }
 
-    /// 从报表中汇总不重复的存档选项（按 label 排序）。
+    /// 汇总并排序存档选项。
     static func makeSavePickerOptions(from reports: [MultiGamePlayerReport]) -> [SavePickerOption] {
         var dict: [String: String] = [:]
         for report in reports {
@@ -54,14 +54,13 @@ enum MultiGamePlayerReportFiltering {
         return options
     }
 
-    /// 基于「全部玩家 x 全部游戏」报表结果列出玩家 ID（按展示名排序）。
+    /// 按展示名排序玩家 ID。
     static func sortedPlayerUUIDs(from reports: [MultiGamePlayerReport], displayName: (String) -> String) -> [String] {
         reports.map(\.playerUUID)
             .sorted { displayName($0) < displayName($1) }
     }
 
-    /// 按当前玩家 ID（String）过滤报表；内部统一为「无短杠、小写」后比较。
-    /// `allowedPlayerIDs == nil` 时不过滤；空集合表示「当前无玩家」，返回空结果。
+    /// 按当前玩家集合过滤；`nil` 不过滤，空集返回空。
     static func filterByCurrentPlayerIDs(
         _ input: [MultiGamePlayerReport],
         allowedPlayerIDs: Set<String>?
@@ -80,7 +79,7 @@ enum MultiGamePlayerReportFiltering {
         }
     }
 
-    /// 按所选玩家与存档筛选报表；`player == nil` 表示全部玩家，`save == nil` 表示全部存档。
+    /// 按玩家与存档筛选；`nil` 表示全部。
     static func filter(_ input: [MultiGamePlayerReport], player: String?, save: String?) -> [MultiGamePlayerReport] {
         let normalizedPlayer = player.map(MinecraftPlayerIdentity.normalizedIdString)
         if player == nil, save == nil {

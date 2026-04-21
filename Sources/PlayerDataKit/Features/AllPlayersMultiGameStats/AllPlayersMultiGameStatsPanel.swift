@@ -1,7 +1,7 @@
 import Combine
 import SwiftUI
 
-/// 启动器「全部玩家 × 全部游戏」统计：状态与加载逻辑（供 `CommonSheetView` 的 header / body 拆分使用）。
+/// 「全部玩家 × 全部游戏」统计状态与加载逻辑。
 @MainActor
 public final class AllPlayersMultiGameStatsController: ObservableObject {
     public enum ContentState: Equatable {
@@ -50,7 +50,7 @@ public final class AllPlayersMultiGameStatsController: ObservableObject {
         await configureAndLoad(entries: entries, currentPlayerIDs: nil)
     }
 
-    /// 加载全部玩家报表后，按当前玩家 ID（String，无短杠）过滤。
+    /// 加载报表并按当前玩家 ID 过滤。
     public func configureAndLoad(
         entries: [(label: String, savesRoot: URL)],
         currentPlayerIDs: Set<String>?
@@ -83,7 +83,7 @@ public final class AllPlayersMultiGameStatsController: ObservableObject {
         }
     }
 
-    /// 在统计弹窗关闭时调用，避免上次打开的数据残留到下次展示。
+    /// 弹窗关闭时清理状态。
     public func clearForDismiss() {
         reports = []
         contentState = .loading
@@ -97,7 +97,7 @@ public final class AllPlayersMultiGameStatsController: ObservableObject {
         return MultiGamePlayerReportFiltering.filter(reports, player: player, save: save)
     }
 
-    /// 供宿主传入展示名排序；内部默认用玩家 ID 前缀排序。
+    /// 按展示名排序玩家 ID。
     func sortedPlayerUUIDs(displayName: (String) -> String) -> [String] {
         MultiGamePlayerReportFiltering.sortedPlayerUUIDs(from: reports, displayName: displayName)
     }
@@ -116,7 +116,7 @@ public final class AllPlayersMultiGameStatsController: ObservableObject {
     }
 }
 
-// MARK: - Header（放入 CommonSheetView 的 header，避免被限高 ScrollView 卷动）
+// MARK: - Header
 
 public struct AllPlayersMultiGameStatsHeaderContent: View {
     @ObservedObject var controller: AllPlayersMultiGameStatsController
@@ -187,7 +187,7 @@ public struct AllPlayersMultiGameStatsHeaderContent: View {
     }
 }
 
-// MARK: - Body（图表区）
+// MARK: - Body
 
 public struct AllPlayersMultiGameStatsReportSection: View {
     @ObservedObject var controller: AllPlayersMultiGameStatsController

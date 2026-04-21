@@ -1,6 +1,6 @@
 import Foundation
 
-/// 玩家身份字符串工具：统一为「无短杠、小写」格式，便于跨模块比较。
+/// 玩家 ID 字符串规范化工具。
 public enum MinecraftPlayerIdentity {
     public static func normalizedIdString(_ id: String) -> String {
         id.lowercased().filter { $0.isHexDigit }

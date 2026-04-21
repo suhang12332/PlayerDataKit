@@ -1,12 +1,12 @@
 import Foundation
 
-/// 单个世界（`saves` 下的一个子文件夹）中，某玩家 ID 的汇总数据。
+/// 单个世界中的玩家数据。
 struct WorldPlayerRecord: Sendable, Identifiable {
-    /// 使用世界文件夹名作为稳定标识（图表、列表）。
+    /// 以世界目录名为稳定标识。
     var id: String { worldDirectoryName }
 
     let worldDirectoryName: String
-    /// `level.dat` 中的 LevelName；若无法读取则为 nil。
+    /// 来自 `level.dat` 的 LevelName。
     let displayName: String?
     let stats: MinecraftStatsSnapshot?
     let advancements: MinecraftAdvancementsSnapshot?
@@ -23,14 +23,14 @@ struct WorldPlayerRecord: Sendable, Identifiable {
         self.advancements = advancements
     }
 
-    /// 图表与汇总用的展示标签。
+    /// 图表展示名。
     var chartLabel: String {
         if let displayName, !displayName.isEmpty { return displayName }
         return worldDirectoryName
     }
 }
 
-/// 某一游戏实例（一个 `saves` 根目录）下，指定玩家在所有单人世界中的数据。
+/// 单个游戏实例下的玩家汇总。
 struct PlayerSaveReport: Sendable {
     let playerUUID: String
     let worlds: [WorldPlayerRecord]
@@ -40,7 +40,7 @@ struct PlayerSaveReport: Sendable {
         self.worlds = worlds
     }
 
-    /// 各世界 `minecraft:play_time`（tick）之和；缺计为 0。
+    /// 各世界 `play_time` tick 总和。
     var totalPlayTimeTicks: Int64 {
         worlds.reduce(0) { partial, w in
             partial + (w.stats?.playTimeTicks ?? 0)
@@ -48,7 +48,7 @@ struct PlayerSaveReport: Sendable {
     }
 }
 
-/// 多个游戏（多个 `saves` 根目录）同一玩家 ID 的对比，用于启动器侧「多实例」报表。
+/// 同一玩家在多个游戏实例下的对比报表。
 struct MultiGamePlayerReport: Sendable {
     struct Entry: Sendable, Identifiable {
         var id: String { savesRoot.path }

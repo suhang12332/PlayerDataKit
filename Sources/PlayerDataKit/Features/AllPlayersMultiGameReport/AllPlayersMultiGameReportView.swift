@@ -1,12 +1,9 @@
 import Charts
 import SwiftUI
 
-/// 展示「全部玩家 x 全部游戏实例」的汇总统计。
+/// 展示「全部玩家 × 全部游戏实例」汇总统计。
 ///
-/// 传入 `PlayerSaveScanner.buildAllPlayersMultiGameReports(entries:)` 的结果即可使用。
-///
-/// - Parameters:
-///   - playerDisplayName: 将玩家 ID（无短杠）映射为展示名（如图表「按玩家」图例）；主应用应从账户列表解析昵称。
+/// `reports` 传入 `PlayerSaveScanner.buildAllPlayersMultiGameReports(entries:)` 的结果。
 struct AllPlayersMultiGameReportView: View {
     private struct DashboardData {
         let playerRows: [PlayerPlayTimeRow]
