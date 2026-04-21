@@ -47,13 +47,9 @@ public final class AllPlayersMultiGameStatsController: ObservableObject {
         entries.map { "\($0.label)|\($0.savesRoot.path)" }.joined(separator: "\u{1e}")
     }
 
-    public func configureAndLoad(entries: [(label: String, savesRoot: URL)]) async {
-        await configureAndLoad(entries: entries, currentPlayerIDs: nil)
-    }
-
     public func configureAndLoad(
         entries: [(label: String, savesRoot: URL)],
-        currentPlayerIDs: Set<String>?
+        currentPlayerIDs: Set<String>? = nil
     ) async {
         self.entries = entries
         contentState = .loading
