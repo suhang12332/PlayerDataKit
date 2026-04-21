@@ -8,11 +8,11 @@ private struct ShareSliceRow: Identifiable {
 }
 
 private struct PlayerSaveFlatRow: Identifiable {
-    let playerUUID: UUID
+    let playerUUID: String
     let playerLabel: String
     let saveLabel: String
     let hours: Double
-    var id: String { "\(playerUUID.uuidString)|\(saveLabel)" }
+    var id: String { "\(playerUUID)|\(saveLabel)" }
 }
 
 extension AllPlayersMultiGameReportView {
@@ -119,7 +119,6 @@ extension AllPlayersMultiGameReportView {
                                 }
                                 .width(min: 90, ideal: 110)
                             }
-                            // Table 在横向 ScrollView 中需要显式宽度，避免布局塌陷为 0。
                             .frame(minWidth: max(proxy.size.width, 450), alignment: .leading)
                             .frame(minHeight: CGFloat(max(220, flatRows.count * 24)))
                         }
@@ -130,7 +129,6 @@ extension AllPlayersMultiGameReportView {
         }
     }
 
-    /// 每个游戏存档一条横条，按玩家分段堆叠；图例为 ``playerDisplayName`` 返回的展示名。
     func playTimeByGamePerPlayerChart(rows: [GamePlayerPlayRow]) -> some View {
         return Group {
             if rows.isEmpty == false {

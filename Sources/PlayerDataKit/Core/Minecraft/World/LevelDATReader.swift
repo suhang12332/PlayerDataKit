@@ -1,7 +1,6 @@
 import Foundation
 
 enum LevelDATReader {
-    /// 读取世界文件夹 `level.dat` 中的展示名 `LevelName`（失败时返回 nil）。
     static func readWorldDisplayName(worldDirectory: URL) -> String? {
         let url = worldDirectory.appendingPathComponent("level.dat", isDirectory: false)
         guard FileManager.default.fileExists(atPath: url.path) else { return nil }

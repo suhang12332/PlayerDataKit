@@ -1,22 +1,17 @@
 import Foundation
 
-/// 扫描 Minecraft Java 版 `saves` 目录，按 UUID 聚合 `stats` / `advancements`。
 enum PlayerSaveScanner {
-    // MARK: - 公共 API
-
-    /// 枚举 `saves` 下所有世界中出现的玩家 UUID（来自 `stats/*.json`）。
-    static func discoverPlayerUUIDs(savesRoot: URL) -> [UUID] {
-        var uuids = Set<UUID>()
+    static func discoverPlayerUUIDs(savesRoot: URL) -> [String] {
+        var uuids = Set<String>()
         for world in worldDirectories(under: savesRoot) {
             collectUUIDs(from: world.appendingPathComponent("stats", isDirectory: true), pathExtension: "json", into: &uuids)
         }
-        return uuids.sorted { $0.minecraftFileStem < $1.minecraftFileStem }
+        return uuids.sorted()
     }
 
-    /// 构建指定玩家在「一个 saves 根目录」下的完整报表。
-    static func buildReport(savesRoot: URL, playerUUID: UUID) throws -> PlayerSaveReport {
-        let normalizedStem = playerUUID.minecraftFileStem
-        let dashedStem = playerUUID.uuidString.lowercased()
+    static func buildReport(savesRoot: URL, playerUUID: String) throws -> PlayerSaveReport {
+        let normalizedStem = MinecraftPlayerIdentity.normalizedIdString(playerUUID)
+        let dashedStem = MinecraftPlayerIdentity.dashedUUIDString(fromNormalized: normalizedStem) ?? normalizedStem
         var records: [WorldPlayerRecord] = []
 
         let worlds = worldDirectories(under: savesRoot)
@@ -66,21 +61,18 @@ enum PlayerSaveScanner {
         }
 
         records.sort { $0.worldDirectoryName.localizedCaseInsensitiveCompare($1.worldDirectoryName) == .orderedAscending }
-        return PlayerSaveReport(playerUUID: playerUUID, worlds: records)
+        return PlayerSaveReport(playerUUID: normalizedStem, worlds: records)
     }
 
-    /// 为多个游戏目录构建「所有玩家」的对比报表。
-    ///
-    /// - Returns: 所有在任一 `saves` 里出现过的玩家多实例报表（按 UUID 文件名升序）。
     static func buildAllPlayersMultiGameReports(
         entries: [(label: String, savesRoot: URL)]
     ) throws -> [MultiGamePlayerReport] {
-        var allUUIDs = Set<UUID>()
+        var allUUIDs = Set<String>()
         for entry in entries {
             allUUIDs.formUnion(discoverPlayerUUIDs(savesRoot: entry.savesRoot))
         }
 
-        let sortedUUIDs = allUUIDs.sorted { $0.minecraftFileStem < $1.minecraftFileStem }
+        let sortedUUIDs = allUUIDs.sorted()
         var reports: [MultiGamePlayerReport] = []
         reports.reserveCapacity(sortedUUIDs.count)
 
@@ -99,8 +91,6 @@ enum PlayerSaveScanner {
         return reports
     }
 
-    // MARK: - 内部
-
     private static func worldDirectories(under savesRoot: URL) -> [URL] {
         let fm = FileManager.default
         guard let contents = try? fm.contentsOfDirectory(
@@ -115,7 +105,7 @@ enum PlayerSaveScanner {
         }
     }
 
-    private static func collectUUIDs(from directory: URL, pathExtension: String, into set: inout Set<UUID>) {
+    private static func collectUUIDs(from directory: URL, pathExtension: String, into set: inout Set<String>) {
         let fm = FileManager.default
         guard fm.fileExists(atPath: directory.path) else { return }
         guard let files = try? fm.contentsOfDirectory(
@@ -128,9 +118,9 @@ enum PlayerSaveScanner {
         let extLower = pathExtension.lowercased()
         for url in files where url.pathExtension.lowercased() == extLower {
             let stem = url.deletingPathExtension().lastPathComponent
-            if let u = UUID(minecraftFileStem: stem) {
-                set.insert(u)
-            }
+            let normalized = MinecraftPlayerIdentity.normalizedIdString(stem)
+            guard normalized.count == 32 else { continue }
+            set.insert(normalized)
         }
     }
 

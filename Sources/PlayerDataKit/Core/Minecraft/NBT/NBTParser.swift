@@ -1,6 +1,5 @@
 import Foundation
 
-/// Minecraft NBT 解析（只读），用于 `level.dat` 等 GZIP 压缩的 Compound 根文件。
 final class NBTParser {
     private var data: Data
     private var offset: Int = 0
