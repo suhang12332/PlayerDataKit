@@ -81,7 +81,6 @@ public final class AllPlayersMultiGameStatsController: ObservableObject {
 
     public func clearForDismiss() {
         reports = []
-        contentState = .loading
         entries = []
         resetPickers()
     }
