@@ -1,4 +1,5 @@
 "allPlayers.stats.error.emptyEntries" = "통계를 위한 게임 저장 디렉터리를 찾을 수 없습니다.";
+"allPlayers.stats.error.emptyPlayers" = "통계에 사용할 수 있는 플레이어가 없습니다.";
 "allPlayers.stats.error.loadFailurePrefix" = "통계 실패: ";
 "allPlayers.stats.header.title" = "플레이어 통계";
 "allPlayers.stats.picker.allPlayers" = "모든 플레이어";

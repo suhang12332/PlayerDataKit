@@ -1,4 +1,5 @@
 "allPlayers.stats.error.emptyEntries" = "Không tìm thấy thư mục lưu trò chơi để thống kê.";
+"allPlayers.stats.error.emptyPlayers" = "Không có người chơi khả dụng cho thống kê.";
 "allPlayers.stats.error.loadFailurePrefix" = "Thống kê thất bại: ";
 "allPlayers.stats.header.title" = "Thống kê người chơi";
 "allPlayers.stats.picker.allPlayers" = "Tất cả người chơi";

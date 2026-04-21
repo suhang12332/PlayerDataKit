@@ -1,4 +1,5 @@
 "allPlayers.stats.error.emptyEntries" = "No game save directories found for statistics.";
+"allPlayers.stats.error.emptyPlayers" = "No players available for statistics.";
 "allPlayers.stats.error.loadFailurePrefix" = "Statistics failed: ";
 "allPlayers.stats.header.title" = "Player Statistics";
 "allPlayers.stats.picker.allPlayers" = "All Players";

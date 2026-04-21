@@ -1,4 +1,5 @@
 "allPlayers.stats.error.emptyEntries" = "Istatistikler için oyun kayıt dizini bulunamadı.";
+"allPlayers.stats.error.emptyPlayers" = "Istatistikler için kullanılabilir oyuncu yok.";
 "allPlayers.stats.error.loadFailurePrefix" = "Istatistikler başarısız: ";
 "allPlayers.stats.header.title" = "Oyuncu İstatistikleri";
 "allPlayers.stats.picker.allPlayers" = "Tüm Oyuncular";

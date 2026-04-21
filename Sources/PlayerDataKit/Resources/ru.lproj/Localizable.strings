@@ -1,4 +1,5 @@
 "allPlayers.stats.error.emptyEntries" = "Не найдены каталоги сохранений для статистики.";
+"allPlayers.stats.error.emptyPlayers" = "Нет игроков, доступных для статистики.";
 "allPlayers.stats.error.loadFailurePrefix" = "Ошибка статистики: ";
 "allPlayers.stats.header.title" = "Статистика игроков";
 "allPlayers.stats.picker.allPlayers" = "Все игроки";

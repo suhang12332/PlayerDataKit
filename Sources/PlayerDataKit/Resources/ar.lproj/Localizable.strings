@@ -1,4 +1,5 @@
 "allPlayers.stats.error.emptyEntries" = "لم يتم العثور على مجلدات حفظ اللعبة للإحصاءات.";
+"allPlayers.stats.error.emptyPlayers" = "لا يوجد لاعبون متاحون للإحصاءات.";
 "allPlayers.stats.error.loadFailurePrefix" = "فشل الإحصاءات: ";
 "allPlayers.stats.header.title" = "إحصاءات اللاعبين";
 "allPlayers.stats.picker.allPlayers" = "كل اللاعبين";

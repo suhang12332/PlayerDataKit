@@ -1,4 +1,5 @@
 "allPlayers.stats.error.emptyEntries" = "Inga spelsparmappar hittades för statistik.";
+"allPlayers.stats.error.emptyPlayers" = "Inga spelare tillgängliga för statistik.";
 "allPlayers.stats.error.loadFailurePrefix" = "Statistik misslyckades: ";
 "allPlayers.stats.header.title" = "Spelarstatistik";
 "allPlayers.stats.picker.allPlayers" = "Alla spelare";

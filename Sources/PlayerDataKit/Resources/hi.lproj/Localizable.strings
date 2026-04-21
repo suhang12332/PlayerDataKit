@@ -1,4 +1,5 @@
 "allPlayers.stats.error.emptyEntries" = "सांख्यिकी के लिए कोई गेम सेव डायरेक्टरी नहीं मिली।";
+"allPlayers.stats.error.emptyPlayers" = "सांख्यिकी के लिए कोई खिलाड़ी उपलब्ध नहीं है।";
 "allPlayers.stats.error.loadFailurePrefix" = "सांख्यिकी विफल: ";
 "allPlayers.stats.header.title" = "खिलाड़ी सांख्यिकी";
 "allPlayers.stats.picker.allPlayers" = "सभी खिलाड़ी";

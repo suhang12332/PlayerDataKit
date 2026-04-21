@@ -1,4 +1,5 @@
 "allPlayers.stats.error.emptyEntries" = "Tilastoille ei löytynyt pelitallennushakemistoja.";
+"allPlayers.stats.error.emptyPlayers" = "Tilastoihin ei ole saatavilla pelaajia.";
 "allPlayers.stats.error.loadFailurePrefix" = "Tilastot epäonnistuivat: ";
 "allPlayers.stats.header.title" = "Pelaajatilastot";
 "allPlayers.stats.picker.allPlayers" = "Kaikki pelaajat";

@@ -1,4 +1,5 @@
 "allPlayers.stats.error.emptyEntries" = "Geen game-savemappen gevonden voor statistieken.";
+"allPlayers.stats.error.emptyPlayers" = "Geen spelers beschikbaar voor statistieken.";
 "allPlayers.stats.error.loadFailurePrefix" = "Statistieken mislukt: ";
 "allPlayers.stats.header.title" = "Spelerstatistieken";
 "allPlayers.stats.picker.allPlayers" = "Alle spelers";
