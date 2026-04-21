@@ -1,6 +1,6 @@
 import Foundation
 
-/// 单个世界（`saves` 下的一个子文件夹）中，某 UUID 的汇总数据。
+/// 单个世界（`saves` 下的一个子文件夹）中，某玩家 ID 的汇总数据。
 struct WorldPlayerRecord: Sendable, Identifiable {
     /// 使用世界文件夹名作为稳定标识（图表、列表）。
     var id: String { worldDirectoryName }
@@ -30,13 +30,13 @@ struct WorldPlayerRecord: Sendable, Identifiable {
     }
 }
 
-/// 某一游戏实例（一个 `saves` 根目录）下，指定 UUID 在所有单人世界中的数据。
+/// 某一游戏实例（一个 `saves` 根目录）下，指定玩家在所有单人世界中的数据。
 struct PlayerSaveReport: Sendable {
-    let playerUUID: UUID
+    let playerUUID: String
     let worlds: [WorldPlayerRecord]
 
-    init(playerUUID: UUID, worlds: [WorldPlayerRecord]) {
-        self.playerUUID = playerUUID
+    init(playerUUID: String, worlds: [WorldPlayerRecord]) {
+        self.playerUUID = MinecraftPlayerIdentity.normalizedIdString(playerUUID)
         self.worlds = worlds
     }
 
@@ -48,7 +48,7 @@ struct PlayerSaveReport: Sendable {
     }
 }
 
-/// 多个游戏（多个 `saves` 根目录）同一 UUID 的对比，用于启动器侧「多实例」报表。
+/// 多个游戏（多个 `saves` 根目录）同一玩家 ID 的对比，用于启动器侧「多实例」报表。
 struct MultiGamePlayerReport: Sendable {
     struct Entry: Sendable, Identifiable {
         var id: String { savesRoot.path }
@@ -63,11 +63,11 @@ struct MultiGamePlayerReport: Sendable {
         }
     }
 
-    let playerUUID: UUID
+    let playerUUID: String
     let entries: [Entry]
 
-    init(playerUUID: UUID, entries: [Entry]) {
-        self.playerUUID = playerUUID
+    init(playerUUID: String, entries: [Entry]) {
+        self.playerUUID = MinecraftPlayerIdentity.normalizedIdString(playerUUID)
         self.entries = entries
     }
 }

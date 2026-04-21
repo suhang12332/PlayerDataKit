@@ -8,11 +8,11 @@ private struct ShareSliceRow: Identifiable {
 }
 
 private struct PlayerSaveFlatRow: Identifiable {
-    let playerUUID: UUID
+    let playerUUID: String
     let playerLabel: String
     let saveLabel: String
     let hours: Double
-    var id: String { "\(playerUUID.uuidString)|\(saveLabel)" }
+    var id: String { "\(playerUUID)|\(saveLabel)" }
 }
 
 extension AllPlayersMultiGameReportView {

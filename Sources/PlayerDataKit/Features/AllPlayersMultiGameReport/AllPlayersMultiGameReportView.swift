@@ -6,7 +6,7 @@ import SwiftUI
 /// 传入 `PlayerSaveScanner.buildAllPlayersMultiGameReports(entries:)` 的结果即可使用。
 ///
 /// - Parameters:
-///   - playerDisplayName: 将玩家 UUID 映射为展示名（如图表「按玩家」图例）；主应用应从账户列表解析昵称。
+///   - playerDisplayName: 将玩家 ID（无短杠）映射为展示名（如图表「按玩家」图例）；主应用应从账户列表解析昵称。
 struct AllPlayersMultiGameReportView: View {
     private struct DashboardData {
         let playerRows: [PlayerPlayTimeRow]
@@ -17,15 +17,15 @@ struct AllPlayersMultiGameReportView: View {
     }
 
     let reports: [MultiGamePlayerReport]
-    let playerDisplayName: (UUID) -> String
-    let playerAvatarView: (UUID) -> AnyView
+    let playerDisplayName: (String) -> String
+    let playerAvatarView: (String) -> AnyView
 
     init(
         reports: [MultiGamePlayerReport],
-        playerDisplayName: @escaping (UUID) -> String = { uuid in
-            String(uuid.uuidString.prefix(8))
+        playerDisplayName: @escaping (String) -> String = { playerID in
+            String(playerID.prefix(8))
         },
-        playerAvatarView: @escaping (UUID) -> AnyView = { _ in
+        playerAvatarView: @escaping (String) -> AnyView = { _ in
             AnyView(
                 Image(systemName: "person.crop.circle.fill")
                     .resizable()
@@ -43,9 +43,9 @@ struct AllPlayersMultiGameReportView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 if reports.isEmpty {
-                    ProgressView()
-                        .controlSize(.small)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                    Text(PDKL10n.string("allPlayers.stats.error.emptyEntries"))
+                        .foregroundStyle(.secondary)
+                        .frame(maxWidth: .infinity, alignment: .center)
                 } else {
                     let dashboardData = makeDashboardData()
                     AllPlayersGlobalOverviewContent(reports: reports)

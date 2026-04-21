@@ -1,9 +1,20 @@
 import Foundation
 
-/// 与 ``UUID`` 的 `minecraftFileStem` 风格一致，用于与账户列表中的玩家 id 字符串比较。
+/// 玩家身份字符串工具：统一为「无短杠、小写」格式，便于跨模块比较。
 public enum MinecraftPlayerIdentity {
     public static func normalizedIdString(_ id: String) -> String {
-        id.lowercased().replacingOccurrences(of: "-", with: "")
+        id.lowercased().filter { $0.isHexDigit }
+    }
+
+    public static func dashedUUIDString(fromNormalized id: String) -> String? {
+        let normalized = normalizedIdString(id)
+        guard normalized.count == 32 else { return nil }
+        let p1 = String(normalized.prefix(8))
+        let p2 = String(normalized.dropFirst(8).prefix(4))
+        let p3 = String(normalized.dropFirst(12).prefix(4))
+        let p4 = String(normalized.dropFirst(16).prefix(4))
+        let p5 = String(normalized.dropFirst(20).prefix(12))
+        return "\(p1)-\(p2)-\(p3)-\(p4)-\(p5)"
     }
 }
 

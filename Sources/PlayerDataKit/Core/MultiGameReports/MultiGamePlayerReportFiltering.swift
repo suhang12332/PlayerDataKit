@@ -1,6 +1,6 @@
 import Foundation
 
-/// Picker 使用 `String` 表示「全部」与具体 UUID / 存档 key。
+/// Picker 使用 `String` 表示「全部」与具体玩家 ID / 存档 key。
 enum MultiGameReportPickerToken {
     static let all = "__ALL__"
 }
@@ -54,37 +54,47 @@ enum MultiGamePlayerReportFiltering {
         return options
     }
 
-    /// 基于「全部玩家 x 全部游戏」报表结果列出玩家 UUID（按展示名排序）。
-    static func sortedPlayerUUIDs(from reports: [MultiGamePlayerReport], displayName: (UUID) -> String) -> [UUID] {
+    /// 基于「全部玩家 x 全部游戏」报表结果列出玩家 ID（按展示名排序）。
+    static func sortedPlayerUUIDs(from reports: [MultiGamePlayerReport], displayName: (String) -> String) -> [String] {
         reports.map(\.playerUUID)
             .sorted { displayName($0) < displayName($1) }
     }
 
-    /// 按当前玩家列表过滤报表；`allowedPlayers == nil` 或空集合时不过滤。
-    static func filterByCurrentPlayers(
+    /// 按当前玩家 ID（String）过滤报表；内部统一为「无短杠、小写」后比较。
+    /// `allowedPlayerIDs == nil` 时不过滤；空集合表示「当前无玩家」，返回空结果。
+    static func filterByCurrentPlayerIDs(
         _ input: [MultiGamePlayerReport],
-        allowedPlayers: Set<UUID>?
+        allowedPlayerIDs: Set<String>?
     ) -> [MultiGamePlayerReport] {
-        guard let allowedPlayers, allowedPlayers.isEmpty == false else {
+        guard let allowedPlayerIDs else {
             return input
         }
-        return input.filter { allowedPlayers.contains($0.playerUUID) }
+        guard allowedPlayerIDs.isEmpty == false else {
+            return []
+        }
+        let normalizedAllowed = Set(
+            allowedPlayerIDs.map { MinecraftPlayerIdentity.normalizedIdString($0) }
+        )
+        return input.filter { report in
+            normalizedAllowed.contains(MinecraftPlayerIdentity.normalizedIdString(report.playerUUID))
+        }
     }
 
     /// 按所选玩家与存档筛选报表；`player == nil` 表示全部玩家，`save == nil` 表示全部存档。
-    static func filter(_ input: [MultiGamePlayerReport], player: UUID?, save: String?) -> [MultiGamePlayerReport] {
+    static func filter(_ input: [MultiGamePlayerReport], player: String?, save: String?) -> [MultiGamePlayerReport] {
+        let normalizedPlayer = player.map(MinecraftPlayerIdentity.normalizedIdString)
         if player == nil, save == nil {
             return input
         }
-        if let player, save == nil {
-            return input.filter { $0.playerUUID == player }
+        if let normalizedPlayer, save == nil {
+            return input.filter { $0.playerUUID == normalizedPlayer }
         }
 
         var out: [MultiGamePlayerReport] = []
         out.reserveCapacity(input.count)
 
         for r in input {
-            if let player, r.playerUUID != player { continue }
+            if let normalizedPlayer, r.playerUUID != normalizedPlayer { continue }
 
             let entries: [MultiGamePlayerReport.Entry] = r.entries.compactMap { entry in
                 guard let world = entry.report.worlds.first(where: { world in

@@ -2,7 +2,7 @@ import Foundation
 
 extension AllPlayersMultiGameReportView {
     func groupedPlayTimeByPlayer() -> [PlayerPlayTimeRow] {
-        var hoursByPlayer: [UUID: Double] = [:]
+        var hoursByPlayer: [String: Double] = [:]
         hoursByPlayer.reserveCapacity(reports.count)
 
         for report in reports {
@@ -21,7 +21,7 @@ extension AllPlayersMultiGameReportView {
         return hoursByPlayer.map { uuid, hours in
             PlayerPlayTimeRow(
                 playerUUID: uuid,
-                playerLabel: labelByUUID[uuid] ?? String(uuid.uuidString.prefix(8)),
+                playerLabel: labelByUUID[uuid] ?? String(uuid.prefix(8)),
                 playHours: hours
             )
         }
@@ -70,7 +70,7 @@ extension AllPlayersMultiGameReportView {
         )
         let labelByUUID = disambiguatedPlayerLabels(rawNameByUUID: rawNameByUUID)
 
-        var hoursBySavePlayer: [String: [UUID: Double]] = [:]
+        var hoursBySavePlayer: [String: [String: Double]] = [:]
         var saveLabelByKey: [String: String] = [:]
         var totalsBySave: [String: Double] = [:]
 
@@ -106,7 +106,7 @@ extension AllPlayersMultiGameReportView {
         for (saveKey, byPlayer) in hoursBySavePlayer {
             let saveLabel = saveLabelByKey[saveKey] ?? saveKey
             for (playerUUID, hours) in byPlayer {
-                let playerLabel = labelByUUID[playerUUID] ?? String(playerUUID.uuidString.prefix(8))
+                let playerLabel = labelByUUID[playerUUID] ?? String(playerUUID.prefix(8))
                 rows.append(
                     GamePlayerPlayRow(
                         gameLabel: saveLabel,
@@ -128,12 +128,12 @@ extension AllPlayersMultiGameReportView {
         return rows
     }
 
-    func disambiguatedPlayerLabels(rawNameByUUID: [UUID: String]) -> [UUID: String] {
+    func disambiguatedPlayerLabels(rawNameByUUID: [String: String]) -> [String: String] {
         let groups = Dictionary(grouping: rawNameByUUID.keys, by: { rawNameByUUID[$0] ?? "" })
-        var out: [UUID: String] = [:]
+        var out: [String: String] = [:]
         out.reserveCapacity(rawNameByUUID.count)
         for (rawName, uuids) in groups {
-            let ordered = uuids.sorted { $0.uuidString < $1.uuidString }
+            let ordered = uuids.sorted()
             if ordered.count > 1 {
                 for (index, uuid) in ordered.enumerated() {
                     out[uuid] = "\(rawName)#\(index + 1)"
@@ -146,10 +146,10 @@ extension AllPlayersMultiGameReportView {
     }
 
     func playerSaveMatrixCells() -> [PlayerSaveMatrixCell] {
-        var totalsByPlayer: [UUID: Double] = [:]
+        var totalsByPlayer: [String: Double] = [:]
         var totalsBySave: [String: Double] = [:]
         var saveLabelByKey: [String: String] = [:]
-        var matrix: [UUID: [String: Double]] = [:]
+        var matrix: [String: [String: Double]] = [:]
 
         for report in reports {
             for entry in report.entries {

@@ -36,18 +36,18 @@ enum Formatting {
 
 struct GamePlayerPlayRow: Identifiable {
     let gameLabel: String
-    let playerUUID: UUID
+    let playerUUID: String
     let playHours: Double
     /// 图例与堆叠系列标签（已处理重名）。
     let playerLabel: String
-    var id: String { "\(gameLabel)|\(playerUUID.uuidString)" }
+    var id: String { "\(gameLabel)|\(playerUUID)" }
 }
 
 struct PlayerPlayTimeRow: Identifiable {
-    let playerUUID: UUID
+    let playerUUID: String
     let playerLabel: String
     let playHours: Double
-    var id: String { playerUUID.uuidString }
+    var id: String { playerUUID }
 }
 
 struct SaveHeatRow: Identifiable {
@@ -58,9 +58,9 @@ struct SaveHeatRow: Identifiable {
 }
 
 struct PlayerSaveMatrixCell: Identifiable {
-    let playerUUID: UUID
+    let playerUUID: String
     let playerLabel: String
     let saveLabel: String
     let playHours: Double
-    var id: String { "\(playerUUID.uuidString)|\(saveLabel)" }
+    var id: String { "\(playerUUID)|\(saveLabel)" }
 }
